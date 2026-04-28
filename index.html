@@ -3,14 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Pasquale Caiazzo – NATworking</title>
+<title>Pasquale Caiazzo</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --green: #50AD32; --green-mid: #c2e8b0; }
+  :root {
+    --blue: #38bdf8;
+    --blue-dim: #0ea5e9;
+    --navy: #0f172a;
+    --navy-card: #1e293b;
+    --navy-mid: #334155;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+  }
   html, body {
     height: 100%;
     overflow: hidden;
-    background: #f0f5ee;
+    background: var(--navy);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   body {
@@ -21,69 +29,77 @@
     height: 100dvh;
   }
   .card {
-    background: #fff;
-    border-radius: 20px;
+    background: var(--navy-card);
+    border-radius: 24px;
     width: 100%;
     max-width: 360px;
     height: 100%;
     max-height: 780px;
     overflow: hidden;
-    box-shadow: 0 2px 24px rgba(80,173,50,0.12);
+    border: 1px solid var(--navy-mid);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(56,189,248,0.08);
     text-align: center;
     display: flex;
     flex-direction: column;
   }
   .card-header {
-    background: var(--green);
-    padding: 1.5rem 1.25rem 1.25rem;
-    color: #fff;
+    padding: 2.25rem 1.25rem 2rem;
+    color: var(--text);
     flex-shrink: 0;
-  }
-  .brand {
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    font-weight: 600;
-    opacity: 0.9;
-    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--navy-mid);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
   }
   .name {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.5px;
+    color: var(--text);
     line-height: 1.2;
   }
   .job-title {
     font-size: 12px;
-    margin-top: 4px;
-    opacity: 0.85;
+    color: var(--blue);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .job-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 1px;
+    letter-spacing: 0.02em;
   }
   .card-body {
-    padding: 1.25rem;
+    padding: 1rem 1.25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.4rem;
+    gap: 1rem;
     flex: 1;
     justify-content: center;
   }
   .qr-label {
-    font-size: 10px;
-    color: #6b7280;
-    letter-spacing: 0.08em;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
   .qr-wrap {
     padding: 10px;
-    border-radius: 12px;
-    border: 1.5px solid var(--green-mid);
-    background: #fff;
+    border-radius: 14px;
+    border: 1px solid var(--navy-mid);
+    background: var(--navy);
     display: inline-block;
+    box-shadow: 0 0 0 1px rgba(56,189,248,0.15), inset 0 1px 0 rgba(255,255,255,0.04);
   }
   .qr-wrap img {
     display: block;
-    width: 190px;
-    height: 190px;
+    width: 175px;
+    height: 175px;
     image-rendering: pixelated;
+    border-radius: 6px;
   }
   .actions {
     display: flex;
@@ -94,56 +110,62 @@
   .btn {
     display: block;
     text-align: center;
-    padding: 13px 0;
-    font-size: 15px;
+    padding: 12px 0;
+    font-size: 14px;
     font-weight: 600;
     border-radius: 12px;
     text-decoration: none;
-    background: var(--green);
-    color: #fff;
     border: none;
-    transition: opacity 0.15s;
+    transition: all 0.15s;
+    letter-spacing: 0.01em;
+  }
+  .btn-primary {
+    background: var(--blue);
+    color: var(--navy);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--blue);
+    border: 1px solid var(--navy-mid);
   }
   .btn:hover { opacity: 0.85; }
   .footer {
     padding: 0.75rem;
     font-size: 11px;
-    color: #9ca3af;
+    color: var(--muted);
     flex-shrink: 0;
-  }
-  .footer a {
-    color: var(--green);
-    text-decoration: none;
-    font-weight: 500;
+    border-top: 1px solid var(--navy-mid);
   }
 </style>
 </head>
 <body>
 <div class="card">
   <div class="card-header">
-    <div class="brand">NATworking</div>
-    <div class="name">Pasquale Caiazzo</div>
-    <div class="job-title">Digital Consultant</div>
+    <div>
+      <div class="name">Pasquale Caiazzo</div>
+      <div class="job-title">Digital Consultant</div>
+      <div class="job-sub">People, Process &amp; Innovation</div>
+    </div>
   </div>
   <div class="card-body">
     <div class="qr-label">Scansiona per salvare i contatti</div>
     <div class="qr-wrap">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEICAIAAAAslP2oAAAFCElEQVR4nO3dQW4jNxRAwTjILXz/o805NIusArwOwIAfZDtV6xlKlvVAoGmSX5/P5w/gn/48/QbgRsKAIAwIwoAgDAjCgCAMCMKAIAwIwoAgDAjCgCAMCMKAIAwIf63+h+/v74n3sd2vX7+2jPP08759/Cerr/tTvw9mDAjCgCAMCMKAIAwIwoAgDAjL6xhPdj13X3Xbc/TVdYld6war4zz9++nxp+36PpgxIAgDgjAgCAOCMCAIA4IwIGxbx3iy67ny9HPx6X0Rq6/7ZHX9YdVtP++T6fdpxoAgDAjCgCAMCMKAIAwIwoAwvo7xFtP7E06Nc9t+lbcwY0AQBgRhQBAGBGFAEAYEYUCwjvEfndq/Mb3ewt/MGBCEAUEYEIQBQRgQhAFBGBDG1zFue44+fa7R9L6L1fdzavzpcaaZMSAIA4IwIAgDgjAgCAOCMCBsW8d4+/lFp85lmj4n6tQ5VG//PpgxIAgDgjAgCAOCMCAIA4IwIHx9Pp/T7+EKt+3TmF4HcD7VvzNjQBAGBGFAEAYEYUAQBgRhQFhex3jLfdVvH+fUesip93kbMwYEYUAQBgRhQBAGBGFAEAaE8f0Yp9Y9psdZHf/J9PrDqul9Kauve2ocMwYEYUAQBgRhQBAGBGFAEAaEY/sxVt1238L0vdqrr3tqn8aTU7+vXd9DMwYEYUAQBgRhQBAGBGFAEAaEbfd8P3n73/evjr/qtp9repzb7gl5YsaAIAwIwoAgDAjCgCAMCMKAML6OMf13/Luec7/lHKdd6wPTv5fV1921vuFcKRgkDAjCgCAMCMKAIAwIwoBw3f0Yp/ZRvOXcpFW33b/xFmYMCMKAIAwIwoAgDAjCgCAMCNv2Y7xlH8X0+LfdR3HbOU5vuTfDjAFBGBCEAUEYEIQBQRgQhAFheR3j1L0Qu8a57b7tJ7fd73Hb5zb9+ZgxIAgDgjAgCAOCMCAIA4IwICyvY5y672J6n8Op97nr/oon0/subrtffBczBgRhQBAGBGFAEAYEYUAQBoTx+zFWnTp/aZdT5zXddt/Ik7fsYzFjQBAGBGFAEAYEYUAQBgRhQNh2rtT08+Zd9z9MP7+/7T6KVbs+z7evR5kxIAgDgjAgCAOCMCAIA4IwIIyfK7Xq1PPv2841OrUutGv8tzNjQBAGBGFAEAYEYUAQBgRhQFg+V+rUfcyn7sHY5bb1ltv2gZw6F+uJGQOCMCAIA4IwIAgDgjAgCAPC+H6Mt9wDves5+q59DqtO3b+x6tTP634M2EAYEIQBQRgQhAFBGBCEAWHb/Ri32XWfw/S+jlPnR73lvKlT+zTMGBCEAUEYEIQBQRgQhAFBGBCW1zGenLon4dT+h1P7E07th5kef/pzWGXGgCAMCMKAIAwIwoAgDAjCgLBtHePJbesGp86DWt0fsut1n5x63Se33R9ixoAgDAjCgCAMCMKAIAwIwoAwvo5xm1PnYp26H32X6fO1pu9xdz8GbCAMCMKAIAwIwoAgDAjCgPC/W8dYff49/Xx91a7n9D91X8cuZgwIwoAgDAjCgCAMCMKAIAwI4+sYp/YP7LJr3WPXvRa71lt2OXWvhXOl4ABhQBAGBGFAEAYEYUAQBoRt6xhv+Tv76fOdfuq+i9vOfZpmxoAgDAjCgCAMCMKAIAwIwoDw9fl8Tr8HuI4ZA4IwIAgDgjAgCAOCMCAIA4IwIAgDgjAgCAOCMCAIA4IwIAgDwm9vNjoq17A2zgAAAABJRU5ErkJggg==" alt="QR Code Pasquale Caiazzo">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEICAIAAAAslP2oAAAFEklEQVR4nO3dMY5kNRRAUQaRT9hroEOWwwJZDinbISAa6X4kIz/ZvzknnnFVV9eVpe+2/e37x+dPwI9+Pv0G4EbCgCAMCMKAIAwIwoAgDAjCgCAMCMKAIAwIwoAgDAjCgCAMCL+s/odf//hz4n1s99fvv20Z5+nnffv4T1Zf96t+H8wYEIQBQRgQhAFBGBCEAUEYEJbXMZ7seu6+6rbn6KvrErvWDVbHefr30+NP2/V9MGNAEAYEYUAQBgRhQBAGBGFA2LaO8WTXc+Xp5+LT+yJWX/fJ6vrDqtt+3ifT79OMAUEYEIQBQRgQhAFBGBCEAWF8HeMtpvcnnBrntv0qb2HGgCAMCMKAIAwIwoAgDAjCgGAd4z86tX9jer2Ff5gxIAgDgjAgCAOCMCAIA4IwIIyvY9z2HH36XKPpfRer7+fU+NPjTDNjQBAGBGFAEAYEYUAQBgRhQNi2jvH284tOncs0fU7UqXOo3v59MGNAEAYEYUAQBgRhQBAGBGFA+Pb94/P0e7jCbfs0ptcBnE/178wYEIQBQRgQhAFBGBCEAUEYEJbXMd5yX/Xbxzm1HnLqfd7GjAFBGBCEAUEYEIQBQRgQhAFhfD/GqXWP6XFWx38yvf6wanpfyurrnhrHjAFBGBCEAUEYEIQBQRgQhAHh2H6MVbfdtzB9r/bq657ap/Hk1O9r1/fQjAFBGBCEAUEYEIQBQRgQhAFh2z3fT97+9/2r46+67eeaHue2e0KemDEgCAOCMCAIA4IwIAgDgjAgjK9jTP8d/67n3G85x2nX+sD072X1dXetbzhXCgYJA4IwIAgDgjAgCAOCMCBcdz/GqX0Ubzk3adVt92+8hRkDgjAgCAOCMCAIA4IwIAgDwrb9GG/ZRzE9/m33Udx2jtNb7s0wY0AQBgRhQBAGBGFAEAYEYUBYXsc4dS/ErnFuu2/7yW33e9z2uU1/PmYMCMKAIAwIwoAgDAjCgCAMCMvrGKfuu5je53Dqfe66v+LJ9L6L2+4X38WMAUEYEIQBQRgQhAFBGBCEAWH8foxVp85f2uXUeU233Tfy5C37WMwYEIQBQRgQhAFBGBCEAUEYELadKzX9vHnX/Q/Tz+9vu49i1a7P8+3rUWYMCMKAIAwIwoAgDAjCgCAMCOPnSq069fz7tnONTq0L7Rr/7cwYEIQBQRgQhAFBGBCEAUEYEJbPlTp1H/OpezB2uW295bZ9IKfOxXpixoAgDAjCgCAMCMKAIAwIwoAwvh/jLfdA73qOvmufw6pT92+sOvXzuh8DNhAGBGFAEAYEYUAQBgRhQNh2P8Ztdt3nML2v49T5UW85b+rUPg0zBgRhQBAGBGFAEAYEYUAQBoTldYwnp+5JOLX/4dT+hFP7YabHn/4cVpkxIAgDgjAgCAOCMCAIA4IwIGxbx3hy27rBqfOgVveH7HrdJ6de98lt94eYMSAIA4IwIAgDgjAgCAOCMCCMr2Pc5tS5WKfuR99l+nyt6Xvc3Y8BGwgDgjAgCAOCMCAIA4IwIPzv1jFWn39PP19ftes5/Vfd17GLGQOCMCAIA4IwIAgDgjAgCAPC+DrGqf0Du+xa99h1r8Wu9ZZdTt1r4VwpOEAYEIQBQRgQhAFBGBCEAWHbOsZb/s5++nynr7rv4rZzn6aZMSAIA4IwIAgDgjAgCAOCMCB8+/7xefo9wHXMGBCEAUEYEIQBQRgQhAFBGBCEAUEYEIQBQRgQhAFBGBCEAUEYEP4G+3kl+UWAiZgAAAAASUVORK5CYII=" alt="QR Code Pasquale Caiazzo">
     </div>
     <div class="actions">
-      <a id="vcf-btn" download="Pasquale_Caiazzo.vcf" class="btn">+ Aggiungimi ai contatti</a>
-      <a href="https://mail.google.com/mail/?view=cm&to=p.caiazzo@natworking.eu" target="_blank" class="btn">Inviami una mail</a>
-      <a href="https://wa.me/393337086896" target="_blank" class="btn">Scrivimi su WhatsApp</a>
-      <a href="https://www.linkedin.com/in/pasqualecaiazzo/" target="_blank" class="btn">Aggiungimi su LinkedIn</a>
-      <a href="https://cal.com/pcaiazzo/30min" target="_blank" class="btn">Prenota un appuntamento</a>
+      <a id="vcf-btn" download="Pasquale_Caiazzo.vcf" class="btn btn-primary">+ Aggiungimi ai contatti</a>
+      <a href="https://mail.google.com/mail/?view=cm&to=pasqualecaiazzo.adv@gmail.com" target="_blank" class="btn btn-secondary">Inviami una mail</a>
+      <a href="https://wa.me/393337086896" target="_blank" class="btn btn-secondary">Scrivimi su WhatsApp</a>
+      <a href="https://www.linkedin.com/in/pasqualecaiazzo/" target="_blank" class="btn btn-secondary">Aggiungimi su LinkedIn</a>
+      <a href="https://cal.com/pcaiazzo/30min" target="_blank" class="btn btn-secondary">Prenota un appuntamento</a>
     </div>
   </div>
   <div class="footer">
-    <a href="https://natworking.eu" target="_blank">natworking.eu</a>
+    pasqualecaiazzo.adv@gmail.com
   </div>
 </div>
 <script>
-const vcard = "BEGIN:VCARD\nVERSION:3.0\nFN:Pasquale Caiazzo\nTITLE:Digital Consultant\nEMAIL;TYPE=WORK:p.caiazzo@natworking.eu\nTEL;TYPE=CELL:+393337086896\nURL:https://www.linkedin.com/in/pasqualecaiazzo/\nORG:NATworking\nEND:VCARD";
+const vcard = "BEGIN:VCARD\nVERSION:3.0\nFN:Pasquale Caiazzo\nTITLE:Digital Consultant | People, Process & Innovation\nEMAIL:pasqualecaiazzo.adv@gmail.com\nTEL;TYPE=CELL:+393337086896\nEND:VCARD";
 const blob = new Blob([vcard], { type: "text/vcard" });
 document.getElementById("vcf-btn").href = URL.createObjectURL(blob);
 </script>
