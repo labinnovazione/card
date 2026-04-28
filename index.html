@@ -1,75 +1,76 @@
-
-Index · HTML
-Copia
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Pasquale Caiazzo – NATworking</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --green: #50AD32;
-    --green-light: #f0faea;
-    --green-mid: #c2e8b0;
+  :root { --green: #50AD32; --green-mid: #c2e8b0; }
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    background: #f0f5ee;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   body {
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f0f5ee;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    padding: 2rem;
+    padding: 0.75rem;
+    height: 100dvh;
   }
   .card {
     background: #fff;
     border-radius: 20px;
     width: 100%;
-    max-width: 320px;
+    max-width: 360px;
+    height: 100%;
+    max-height: 780px;
     overflow: hidden;
     box-shadow: 0 2px 24px rgba(80,173,50,0.12);
     text-align: center;
+    display: flex;
+    flex-direction: column;
   }
   .card-header {
     background: var(--green);
-    padding: 1.75rem 1.5rem 1.5rem;
+    padding: 1.5rem 1.25rem 1.25rem;
     color: #fff;
+    flex-shrink: 0;
   }
   .brand {
     font-size: 13px;
     letter-spacing: 0.08em;
     font-weight: 600;
     opacity: 0.9;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
   .name {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
     letter-spacing: -0.3px;
     line-height: 1.2;
   }
   .job-title {
     font-size: 12px;
-    margin-top: 5px;
+    margin-top: 4px;
     opacity: 0.85;
-    font-weight: 400;
   }
   .card-body {
-    padding: 1.5rem;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1.4rem;
+    flex: 1;
+    justify-content: center;
   }
   .qr-label {
     font-size: 10px;
     color: #6b7280;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    text-align: center;
   }
   .qr-wrap {
     padding: 10px;
@@ -80,35 +81,35 @@ Copia
   }
   .qr-wrap img {
     display: block;
-    width: 200px;
-    height: 200px;
+    width: 190px;
+    height: 190px;
     image-rendering: pixelated;
   }
   .actions {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     width: 100%;
   }
   .btn {
     display: block;
     text-align: center;
-    padding: 11px 0;
-    font-size: 14px;
+    padding: 13px 0;
+    font-size: 15px;
     font-weight: 600;
-    border-radius: 10px;
+    border-radius: 12px;
     text-decoration: none;
-    cursor: pointer;
-    transition: opacity 0.15s;
     background: var(--green);
     color: #fff;
     border: none;
+    transition: opacity 0.15s;
   }
   .btn:hover { opacity: 0.85; }
   .footer {
-    padding: 0 1.5rem 1.25rem;
+    padding: 0.75rem;
     font-size: 11px;
     color: #9ca3af;
+    flex-shrink: 0;
   }
   .footer a {
     color: var(--green);
@@ -127,13 +128,14 @@ Copia
   <div class="card-body">
     <div class="qr-label">Scansiona per salvare i contatti</div>
     <div class="qr-wrap">
-      <img src="data:image/png;base64,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4AaIEdwAMds97ttzhG9/7u351yu3e6BTfeoplTnsK6/NMZ+aw155H+L29TGPG+DLCW6AGMENECO4AWIEN0CM4AaIEdwAMds97qm+58rtXudtt3vlt3u1r13n23Oip/rjU9f59vNemVP/GidugBjBDRAjuAFiBDdAjOAGiBHcADGCGyDm2DzuU3Nsd93uY96eq3vKa/PEp3rKlX7u7V757eeu0kOfyofbnLgBYgQ3QIzgBogR3AAxghsgRnADxAhugJifz+dzZKHbc5CnTM1f3jXV437t97rt1HWY6sW/Nk+/kg+vzXN34gaIEdwAMYIbIEZwA8QIboAYwQ0QI7gBYrbnca+81nO8/bm760z1f3dVesq7XtvPqfvwtTnXr82p3zXVf9+9Pk7cADGCGyBGcAPECG6AGMENECO4AWIEN0DMsR73ym7/8fac31P9ylO91Kl+8VQPd3f9P23ed2Vu+9T7ECun7udKD92JGyBGcAPECG6AGMENECO4AWIEN0CM4AaI2e5xT/Uud9fZdbunfMrt/mllrvpr+7y9n6n3IW73oKfu56n3CU7db07cADGCGyBGcAPECG6AGMENECO4AWIEN0DMdo97qu98u+95u6966u9v93OnTM1Nrs9rrsw3f+15P+XU87u7fydugBjBDRAjuAFiBDdAjOAGiBHcADGCGyDm5/P5HFno9rza1/qqr83tnernvjZX/bW5yae81nPfdfs+ee15v33/OHEDxAhugBjBDRAjuAFiBDdAjOAGiBHcADHbPe7X+qErt+cyn3K7n/5a/3RKZe72a+8BTL1X8do6u+vf5sQNECO4AWIEN0CM4AaIEdwAMYIbIEZwA8Qc63GvTPUcb/dwX5s3/VqPfld9rvSub52vfUp9n7d/RydugBjBDRAjuAFiBDdAjOAGiBHcADGCGyBmu8e9MjVfe2qO8O05vytT84Xr32vX1DzrU+pztE+Zem9j5dR+nLgBYgQ3QIzgBogR3AAxghsgRnADxAhugJhfu/9QmQs8tf7t6zA1Z3xqrvopu7/jqftnqq992+3e9ylT+7n9vZy4AWIEN0CM4AaIEdwAMYIbIEZwA8QIboCY7R73yu25vVPzfG/P716pzHG+vf6p/Uz9jlNznCtz6l97vnZN9eiduAFiBDdAjOAGiBHcADGCGyBGcAPECG6AmJ/P53Nkods93JXbvdqpPvVKZQ7yylRvd9drc8nrvfJdt5/Tqeu2srsfJ26AGMENECO4AWIEN0CM4AaIEdwAMYIbIOZ6j7vuW+cgr1T2ueu1nviu13r6lfvh1HV47fo7cQPECG6AGMENECO4AWIEN0CM4AaIEdwAMb92/+G1Obm7XvvcXbd7r6/Ny56at37Kaz3xb93P7u9++72B2/ehEzdAjOAGiBHcADGCGyBGcAPECG6AGMENELPd457yWg96tc5U/3Sq331qnal54rvrrNzuEe9+r9f6+KdMzW1fmbpuTtwAMYIbIEZwA8QIboAYwQ0QI7gBYgQ3QMzP5/M5stDtnvWuSu/7di9116meb2Vu+9R9OzU3fOq5uN2PrtwnK+ZxA3w5wQ0QI7gBYgQ3QIzgBogR3AAxghsgZnse91S/cmqe8mt97an5yKc+9/b+b/d5p3rr9ftnpdLXfm2OuRM3QIzgBogR3AAxghsgRnADxAhugBjBDRCzPY97an70a73vXfX++2tzw1fqc6Knfq/b+5+6ziu3n6Nd5nEDfDnBDRAjuAFiBDdAjOAGiBHcADGCGyBmu8f9mtfm596emzzVz53yWn/8T/tdXvter71HMpU/TtwAMYIbIEZwA8QIboAYwQ0QI7gBYgQ3QMyv6Q38v6bmaK/c3s/UvOzb85F3TfXup3rWr71/cPt3n3rupva/y4kbIEZwA8QIboAYwQ0QI7gBYgQ3QIzgBojZ7nG/Nh95ZdXr3O17npoXPDXP91T/t9JPv/19V+vf7h3X+/JTbs8Bn5qr7sQNECO4AWIEN0CM4AaIEdwAMYIbIEZwA8Qcm8c91fd8bZ7yVJ/69hzh1/a5+7m7XuvL356H/q1z3l+bk37qPnHiBogR3AAxghsgRnADxAhugBjBDRAjuAFijvW4V071QF+bC3y7N72yO2d8d370a9d5pTIXfqXSZ3c//PbadXDiBogR3AAxghsgRnADxAhugBjBDRAjuAFirve4K16bX7zbG52aUzzVp56au71S6U1X3qs49bu8Nk/81HVz4gaIEdwAMYIbIEZwA8QIboAYwQ0QI7gBYvS4/3Wql727zqle6lSvudIH311/9zrcns9+uzd9ap77qfVvP0evzdfe5cQNECO4AWIEN0CM4AaIEdwAMYIbIEZwA8Rc73G/1pc81cN9rU99ap3b61f6zqd6wd/ad36tFz/Vf5/ixA0QI7gBYgQ3QIzgBogR3AAxghsgRnADxPx8Pp+tf7g9N/mU2z3i2/3ZlVO94FPr3/7cqR7ua7/jrsrvfsrUczGVA07cADGCGyBGcAPECG6AGMENECO4AWIEN0DMdo8bgFlO3AAxghsgRnADxAhugBjBDRAjuAFiBDdAjOAGiBHcADGCGyBGcAPECG6AGMENECO4AWIEN0DMPzAQC2S8EsEhAAAAAElFTkSuQmCC" alt="QR Code vCard Pasquale Caiazzo">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEICAIAAAAslP2oAAAFCElEQVR4nO3dQW4jNxRAwTjILXz/o805NIusArwOwIAfZDtV6xlKlvVAoGmSX5/P5w/gn/48/QbgRsKAIAwIwoAgDAjCgCAMCMKAIAwIwoAgDAjCgCAMCMKAIAwIf63+h+/v74n3sd2vX7+2jPP08759/Cerr/tTvw9mDAjCgCAMCMKAIAwIwoAgDAjL6xhPdj13X3Xbc/TVdYld6war4zz9++nxp+36PpgxIAgDgjAgCAOCMCAIA4IwIGxbx3iy67ny9HPx6X0Rq6/7ZHX9YdVtP++T6fdpxoAgDAjCgCAMCMKAIAwIwoAwvo7xFtP7E06Nc9t+lbcwY0AQBgRhQBAGBGFAEAYEYUCwjvEfndq/Mb3ewt/MGBCEAUEYEIQBQRgQhAFBGBDG1zFue44+fa7R9L6L1fdzavzpcaaZMSAIA4IwIAgDgjAgCAOCMCBsW8d4+/lFp85lmj4n6tQ5VG//PpgxIAgDgjAgCAOCMCAIA4IwIHx9Pp/T7+EKt+3TmF4HcD7VvzNjQBAGBGFAEAYEYUAQBgRhQFhex3jLfdVvH+fUesip93kbMwYEYUAQBgRhQBAGBGFAEAaE8f0Yp9Y9psdZHf/J9PrDqul9Kauve2ocMwYEYUAQBgRhQBAGBGFAEAaEY/sxVt1238L0vdqrr3tqn8aTU7+vXd9DMwYEYUAQBgRhQBAGBGFAEAaEbfd8P3n73/evjr/qtp9repzb7gl5YsaAIAwIwoAgDAjCgCAMCMKAML6OMf13/Luec7/lHKdd6wPTv5fV1921vuFcKRgkDAjCgCAMCMKAIAwIwoBw3f0Yp/ZRvOXcpFW33b/xFmYMCMKAIAwIwoAgDAjCgCAMCNv2Y7xlH8X0+LfdR3HbOU5vuTfDjAFBGBCEAUEYEIQBQRgQhAFheR3j1L0Qu8a57b7tJ7fd73Hb5zb9+ZgxIAgDgjAgCAOCMCAIA4IwICyvY5y672J6n8Op97nr/oon0/subrtffBczBgRhQBAGBGFAEAYEYUAQBoTx+zFWnTp/aZdT5zXddt/Ik7fsYzFjQBAGBGFAEAYEYUAQBgRhQNh2rtT08+Zd9z9MP7+/7T6KVbs+z7evR5kxIAgDgjAgCAOCMCAIA4IwIIyfK7Xq1PPv2841OrUutGv8tzNjQBAGBGFAEAYEYUAQBgRhQFg+V+rUfcyn7sHY5bb1ltv2gZw6F+uJGQOCMCAIA4IwIAgDgjAgCAPC+H6Mt9wDves5+q59DqtO3b+x6tTP634M2EAYEIQBQRgQhAFBGBCEAWHb/Ri32XWfw/S+jlPnR73lvKlT+zTMGBCEAUEYEIQBQRgQhAFBGBCW1zGenLon4dT+h1P7E07th5kef/pzWGXGgCAMCMKAIAwIwoAgDAjCgLBtHePJbesGp86DWt0fsut1n5x63Se33R9ixoAgDAjCgCAMCMKAIAwIwoAwvo5xm1PnYp26H32X6fO1pu9xdz8GbCAMCMKAIAwIwoAgDAjCgPC/W8dYff49/Xx91a7n9D91X8cuZgwIwoAgDAjCgCAMCMKAIAwI4+sYp/YP7LJr3WPXvRa71lt2OXWvhXOl4ABhQBAGBGFAEAYEYUAQBoRt6xhv+Tv76fOdfuq+i9vOfZpmxoAgDAjCgCAMCMKAIAwIwoDw9fl8Tr8HuI4ZA4IwIAgDgjAgCAOCMCAIA4IwIAgDgjAgCAOCMCAIA4IwIAgDwm9vNjoq17A2zgAAAABJRU5ErkJggg==" alt="QR Code Pasquale Caiazzo">
     </div>
     <div class="actions">
-      <a id="vcf-btn" download="Pasquale_Caiazzo.vcf" class="btn">+ Aggiungi ai contatti</a>
-      <a href="https://mail.google.com/mail/?view=cm&to=p.caiazzo@natworking.eu" class="btn">Invia una mail</a>
+      <a id="vcf-btn" download="Pasquale_Caiazzo.vcf" class="btn">+ Aggiungimi ai contatti</a>
+      <a href="https://mail.google.com/mail/?view=cm&to=p.caiazzo@natworking.eu" target="_blank" class="btn">Inviami una mail</a>
       <a href="https://wa.me/393337086896" target="_blank" class="btn">Scrivimi su WhatsApp</a>
       <a href="https://www.linkedin.com/in/pasqualecaiazzo/" target="_blank" class="btn">Aggiungimi su LinkedIn</a>
+      <a href="https://cal.com/pcaiazzo/30min" target="_blank" class="btn">Prenota un appuntamento</a>
     </div>
   </div>
   <div class="footer">
