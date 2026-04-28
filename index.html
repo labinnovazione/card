@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <title>Pasquale Caiazzo</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --blue: #38bdf8;
-    --blue-dim: #0ea5e9;
     --navy: #0f172a;
     --navy-card: #1e293b;
     --navy-mid: #334155;
@@ -19,7 +19,7 @@
     height: 100%;
     overflow: hidden;
     background: var(--navy);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Montserrat', -apple-system, sans-serif;
   }
   body {
     display: flex;
@@ -43,32 +43,33 @@
     flex-direction: column;
   }
   .card-header {
-    padding: 2.25rem 1.25rem 2rem;
+    padding: 1.75rem 1.25rem 1.5rem;
     color: var(--text);
     flex-shrink: 0;
     border-bottom: 1px solid var(--navy-mid);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
   .name {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-size: clamp(20px, 6vw, 24px);
+    font-weight: 800;
+    letter-spacing: -0.2px;
     color: var(--text);
-    line-height: 1.2;
+    line-height: 1.15;
+    white-space: nowrap;
   }
   .job-title {
-    font-size: 12px;
+    font-size: 18px;
     color: var(--blue);
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 0.02em;
   }
   .job-sub {
-    font-size: 11px;
+    font-size: 14px;
     color: var(--muted);
-    margin-top: 1px;
+    font-weight: 500;
     letter-spacing: 0.02em;
   }
   .card-body {
@@ -80,12 +81,6 @@
     flex: 1;
     justify-content: center;
   }
-  .qr-label {
-    font-size: 9px;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
   .qr-wrap {
     padding: 10px;
     border-radius: 14px;
@@ -96,8 +91,8 @@
   }
   .qr-wrap img {
     display: block;
-    width: 175px;
-    height: 175px;
+    width: 210px;
+    height: 210px;
     image-rendering: pixelated;
     border-radius: 6px;
   }
@@ -113,6 +108,7 @@
     padding: 12px 0;
     font-size: 14px;
     font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
     border-radius: 12px;
     text-decoration: none;
     border: none;
@@ -135,37 +131,35 @@
     color: var(--muted);
     flex-shrink: 0;
     border-top: 1px solid var(--navy-mid);
+    font-family: 'Montserrat', sans-serif;
   }
 </style>
 </head>
 <body>
 <div class="card">
   <div class="card-header">
-    <div>
-      <div class="name">Pasquale Caiazzo</div>
-      <div class="job-title">Digital Consultant</div>
-      <div class="job-sub">People, Process &amp; Innovation</div>
-    </div>
+    <div class="name">Pasquale Caiazzo</div>
+    <div class="job-title">Digital Consultant</div>
+    <div class="job-sub">People, Process &amp; Innovation</div>
   </div>
   <div class="card-body">
-    <div class="qr-label">Scansiona per salvare i contatti</div>
     <div class="qr-wrap">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEICAIAAAAslP2oAAAE+UlEQVR4nO3dMW4cNxiAUctIr1JnsMocJwf0cdzmOqkNfOOAAAmSq/dqaXa10gcC82vIt/ePz2/A777vfgNwImFAEAYEYUAQBgRhQBAGBGFAEAYEYUAQBgRhQBAGBGFAEAaEv0a/4cfPXyvex3T//vP30Nc//VxP11n9OYy+/yezfq5dn8Mso5+nFQOCMCAIA4IwIAgDgjAgCAPC8Bzjyaz77qNG76Pvuq+/eg4w+rqr3fL38MSKAUEYEIQBQRgQhAFBGBCEAWHaHOPJrPvKu+6Lrzbr55o1V1ntlr8HKwYEYUAQBgRhQBAGBGFAEAaE5XOMW8x6rmPW16/eF4s/s2JAEAYEYUAQBgRhQBAGBGFA+HJzjFn7O+2aM7zq+RWnsWJAEAYEYUAQBgRhQBAGBGFAWD7HuOV5gFvmEquvs9pp7+eJFQOCMCAIA4IwIAgDgjAgCAPCtDnGLf/3/6rnfO96/09u+Xt4YsWAIAwIwoAgDAjCgCAMCMKAMDzHuOX/6Vfb9fzD6PV3zU9uZ8WAIAwIwoAgDAjCgCAMCMKAMDzHOG3/otPez6jTnqM47fyQUbN+71YMCMKAIAwIwoAgDAjCgCAMCMftKzXrvvuo1ftB7dpnadfvZdbcY9fnZsWAIAwIwoAgDAjCgCAMCMKA8Pb+8Tn0Dbecn7B6vnGaVz3fYxcrBgRhQBAGBGFAEAYEYUAQBoRp52Psut+/6zmB1dc/bZ+oUbM+t13zDSsGBGFAEAYEYUAQBgRhQBAGhGn7Su16HmPX/f7bzwNZPd8YfZ+79gd7YsWAIAwIwoAgDAjCgCAMCMKAsPx8jNH71qvnBq863xh12nkdp+1LZsWAIAwIwoAgDAjCgCAMCMKAMDzHOO0+9Kuez7DaaeddrN7va5QVA4IwIAgDgjAgCAOCMCAIA8I152Osfv7h9vO8n5z2fMvqc8TtKwULCQOCMCAIA4IwIAgDgjAgvL1/fE650O1zgNPOvR41az5w2rkfTzyPARsIA4IwIAgDgjAgCAOCMCAMzzFO23do135Wp81Dbn/d0/a5smJAEAYEYUAQBgRhQBAGBGFAmHbO96hdc4ldzxucdo71LLN+rtPmVFYMCMKAIAwIwoAgDAjCgCAMCNPmGKvPqbhlv6PR65x2vsTq68z6+tXXsWJAEAYEYUAQBgRhQBAGBGFAWP48xld77uLJ6nMqZs03Vs9tdl3HvlIwgTAgCAOCMCAIA4IwIAgDwrRzvm9x2vMJu+YzX+11R1kxIAgDgjAgCAOCMCAIA4IwIGw753u12/e5Wn2/f/Uc5rRzu0dZMSAIA4IwIAgDgjAgCAOCMCAcdz7GqF37F+2aA5zmtHMtZn2eVgwIwoAgDAjCgCAMCMKAIAwI287HGHX7ff3Tzguf9bqrr29fKTiIMCAIA4IwIAgDgjAgCAPC8jnGLVbfL7/lvO1dz42Mfg72lYINhAFBGBCEAUEYEIQBQRgQzDH+x+r76LvOnRh9/6ufMxm1+vdixYAgDAjCgCAMCMKAIAwIwoCwfI5xy35QT0473/rJrv2snuw659v5GLCQMCAIA4IwIAgDgjAgCAPC2/vH59A37Pr/+1GnPT8wavS++675wKzrP7GvFBxEGBCEAUEYEIQBQRgQhAFheI4BX4EVA4IwIAgDgjAgCAOCMCAIA4IwIAgDgjAgCAOCMCAIA4IwIAgDwn+QVfXesR4OCgAAAABJRU5ErkJggg==" alt="QR Code Pasquale Caiazzo">
+      <img src="data:image/png;base64,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" alt="QR Code Pasquale Caiazzo">
     </div>
     <div class="actions">
       <a id="vcf-btn" download="Pasquale_Caiazzo.vcf" class="btn btn-primary">+ Aggiungimi ai contatti</a>
-      <a href="https://mail.google.com/mail/?view=cm&to=pasqualecaiazzo.adv@gmail.com" target="_blank" class="btn btn-secondary">Inviami una mail</a>
+      <a href="https://mail.google.com/mail/?view=cm&to=Designed by Pasquale Caiazzo&copy;" target="_blank" class="btn btn-secondary">Inviami una mail</a>
       <a href="https://wa.me/393337086896" target="_blank" class="btn btn-secondary">Scrivimi su WhatsApp</a>
       <a href="https://www.linkedin.com/in/pasqualecaiazzo/" target="_blank" class="btn btn-secondary">Aggiungimi su LinkedIn</a>
       <a href="https://cal.com/pcaiazzo/30min" target="_blank" class="btn btn-secondary">Prenota un appuntamento</a>
     </div>
   </div>
   <div class="footer">
-    pasqualecaiazzo.adv@gmail.com
+    Designed by Pasquale Caiazzo&copy;
   </div>
 </div>
 <script>
-const vcard = "BEGIN:VCARD\nVERSION:3.0\nFN:Pasquale Caiazzo\nTITLE:Digital Consultant | People, Process & Innovation\nEMAIL:pasqualecaiazzo.adv@gmail.com\nTEL;TYPE=CELL:+393337086896\nEND:VCARD";
+const vcard = "BEGIN:VCARD\nVERSION:3.0\nFN:Pasquale Caiazzo\nTITLE:Digital Consultant | People, Process & Innovation\nEMAIL:Designed by Pasquale Caiazzo&copy;\nTEL;TYPE=CELL:+393337086896\nEND:VCARD";
 const blob = new Blob([vcard], { type: "text/vcard" });
 document.getElementById("vcf-btn").href = URL.createObjectURL(blob);
 </script>
